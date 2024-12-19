@@ -5,9 +5,6 @@ type CodeSnippets = {
 };
 
 export const SNIPPETS: CodeSnippets = {
-  javascript: `function hello(name) {
-  return '';
-  }`,
-  python: `def hello(name):
-    pass`,
+  javascript: 'console.log("Hello World")',
+  python: 'print("Hello World!")',
 };

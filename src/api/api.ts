@@ -1,8 +1,8 @@
 import { Language } from '../utils';
 
-type ExecuteRequestBody = {
+export type ExecuteRequestBody = {
   language: Language;
-  output: string;
+  output?: string;
 };
 
 type ExecuteResponseBody = {
