@@ -9,10 +9,4 @@ export const theme = createTheme({
       main: '#573e32',
     },
   },
-
-  typography: {
-    p: {
-      fontSize: '1rem',
-    },
-  },
 });

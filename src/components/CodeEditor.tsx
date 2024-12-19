@@ -1,10 +1,10 @@
 import { Editor, OnMount } from '@monaco-editor/react';
-import { Box, Stack } from '@mui/material';
+import { Box, Button, Stack } from '@mui/material';
 import { useState } from 'react';
 
 import { Language, SNIPPETS } from '../utils';
-import { LanguageSelector } from './languageSelector';
-import { Output } from './output';
+import { LanguageSelector } from './LanguageSelector';
+import { Output } from './Output';
 
 export const CodeEditor = () => {
   const [value, setValue] = useState<string | undefined>('');
@@ -19,6 +19,10 @@ export const CodeEditor = () => {
     setValue(SNIPPETS[language]);
   };
 
+  const handleRun = () => {
+    
+  };
+
   return (
     <Box>
       <Stack spacing={2} direction={'row'}>
@@ -27,6 +31,15 @@ export const CodeEditor = () => {
             language={language}
             onChange={(e) => onSelect(e.target.value as Language)}
           />
+          <Button
+            variant="contained"
+            color="success"
+            size="large"
+            sx={{ mb: 1 }}
+            onClick={handleRun}
+          >
+            RUN
+          </Button>
           <Editor
             height="80vh"
             theme="vs-dark"

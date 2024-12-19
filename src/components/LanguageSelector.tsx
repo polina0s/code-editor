@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  InputLabel,
-  NativeSelect,
-} from '@mui/material';
+import { Box, FormControl, InputLabel, NativeSelect } from '@mui/material';
 
 import { Language } from '../utils';
 
@@ -21,7 +15,7 @@ export const LanguageSelector = ({
 }: LanguageSelectorProps) => {
   return (
     <Box sx={{ mb: 1, height: 55 }}>
-      <FormControl sx={{ width: 200, mr: 2 }}>
+      <FormControl sx={{ width: 150, mr: 2 }}>
         <InputLabel variant="standard" htmlFor="uncontrolled-native">
           Language
         </InputLabel>
@@ -42,9 +36,6 @@ export const LanguageSelector = ({
           })}
         </NativeSelect>
       </FormControl>
-      <Button variant="contained" color="success" size="large" sx={{ mb: 1 }}>
-        Run
-      </Button>
     </Box>
   );
 };

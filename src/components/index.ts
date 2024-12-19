@@ -1,3 +1,3 @@
-export { CodeEditor } from './codeEditor';
-export { LanguageSelector } from './languageSelector';
-export { Output } from './output';
+export { CodeEditor } from './CodeEditor';
+export { LanguageSelector } from './LanguageSelector';
+export { Output } from './Output';
