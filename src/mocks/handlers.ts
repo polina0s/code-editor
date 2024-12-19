@@ -9,7 +9,6 @@ export const handlers = [
       await delay();
 
       const requestBody = await request.json();
-      console.log(requestBody);
 
       if (
         requestBody?.language === 'javascript' &&
