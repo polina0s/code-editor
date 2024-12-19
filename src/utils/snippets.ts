@@ -1,4 +1,4 @@
-export type Language = 'javascript' | 'python';
+import { Language } from './types';
 
 type CodeSnippets = {
   [key in Language]: string;

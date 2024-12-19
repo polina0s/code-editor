@@ -5,14 +5,15 @@ import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 
 import { api } from '../api';
-import { ExecuteRequestBody } from '../api/api';
-import { Language, SNIPPETS } from '../utils';
-import { LanguageSelector } from './LanguageSelector';
-import { Output } from './Output';
+import { DescriptionBlock } from '../components';
+import { LanguageSelector } from '../components/LanguageSelector';
+import { Output } from '../components/Output';
+import { ExecuteRequestBody, Language, SNIPPETS } from '../utils';
 
 export const CodeEditor = () => {
   const [value, setValue] = useState<string | undefined>('');
   const [language, setLanguage] = useState<Language>('javascript');
+
   const theme = useTheme();
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -43,12 +44,21 @@ export const CodeEditor = () => {
   };
 
   return (
-    <Box>
-      <Stack spacing={2} direction={mediumScreen ? 'column' : 'row'}>
-        <Box width={mediumScreen ? '100%' : '50%'}>
+    <Box sx={{ width: '100%', height: '100%' }}>
+      <Stack
+        height={'100%'}
+        spacing={2}
+        direction={mediumScreen ? 'column' : 'row'}
+      >
+        <Box width={mediumScreen ? '100%' : '50%'} sx={{ height: '100%' }}>
+          <DescriptionBlock />
+        </Box>
+        <Box
+          width={mediumScreen ? '100%' : '50%'}
+          sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        >
           <Box
             sx={{
-              height: 55,
               display: 'flex',
               alignItems: 'center',
               mb: 2,
@@ -63,23 +73,23 @@ export const CodeEditor = () => {
               color="success"
               size="large"
               loading={mutation.isPending}
-              sx={{ mb: 1 }}
               onClick={handleRun}
             >
               RUN
             </LoadingButton>
           </Box>
-          <Editor
-            height="80vh"
-            theme="vs-dark"
-            language={language}
-            defaultValue="// some comment"
-            value={value}
-            onMount={onEditorMount}
-            onChange={(value) => setValue(value)}
-          />
+          <Box sx={{ mb: 2, flex: 1 }}>
+            <Editor
+              theme="vs-dark"
+              language={language}
+              defaultValue="// some comment"
+              value={value}
+              onMount={onEditorMount}
+              onChange={(value) => setValue(value)}
+            />
+          </Box>
+          <Output>{mutation.data?.output || mutation.data?.error}</Output>
         </Box>
-        <Output>{mutation.data?.output || mutation.data?.error}</Output>
       </Stack>
     </Box>
   );

@@ -1,15 +1,4 @@
-import { Language } from '../utils';
-
-export type ExecuteRequestBody = {
-  language: Language;
-  output?: string;
-};
-
-type ExecuteResponseBody = {
-  status: 'success' | 'error';
-  output?: string;
-  error?: string;
-};
+import { ExecuteRequestBody, ExecuteResponseBody } from '../utils';
 
 class Api {
   async execute(requestBody: ExecuteRequestBody) {

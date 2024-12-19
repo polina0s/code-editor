@@ -14,7 +14,7 @@ export const LanguageSelector = ({
   onChange,
 }: LanguageSelectorProps) => {
   return (
-    <Box>
+    <Box sx={{ height: '51px' }}>
       <FormControl sx={{ width: 150, mr: 4 }}>
         <InputLabel variant="standard" htmlFor="uncontrolled-native">
           Language

@@ -1,6 +1,6 @@
 import { delay, http, HttpResponse, PathParams } from 'msw';
 
-import { ExecuteRequestBody } from '../api/api';
+import { ExecuteRequestBody } from '../utils';
 
 export const handlers = [
   http.post<PathParams, ExecuteRequestBody>(
