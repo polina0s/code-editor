@@ -5,7 +5,7 @@ import { Language } from '../utils';
 const languages: Language[] = ['javascript', 'python'];
 
 type LanguageSelectorProps = {
-  language: string;
+  language: Language;
   onChange: React.ChangeEventHandler<HTMLSelectElement>;
 };
 

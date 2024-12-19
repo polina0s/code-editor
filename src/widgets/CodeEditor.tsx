@@ -33,14 +33,7 @@ export const CodeEditor = () => {
   });
 
   const handleRun = () => {
-    mutation.mutate(
-      { language, output: value },
-      {
-        onSuccess(data) {
-          console.log(data);
-        },
-      }
-    );
+    mutation.mutate({ language, output: value?.trim() });
   };
 
   return (
@@ -88,7 +81,7 @@ export const CodeEditor = () => {
               onChange={(value) => setValue(value)}
             />
           </Box>
-          <Output>{mutation.data?.output || mutation.data?.error}</Output>
+          <Output>{mutation.data?.output ?? mutation.data?.error}</Output>
         </Box>
       </Stack>
     </Box>
