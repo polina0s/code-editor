@@ -6,7 +6,7 @@ import {
   NativeSelect,
 } from '@mui/material';
 
-import { Language } from '../utils/snippets';
+import { Language } from '../utils';
 
 const languages: Language[] = ['javascript', 'python'];
 

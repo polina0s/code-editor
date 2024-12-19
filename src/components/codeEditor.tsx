@@ -2,7 +2,7 @@ import { Editor, OnMount } from '@monaco-editor/react';
 import { Box, Stack } from '@mui/material';
 import { useState } from 'react';
 
-import { Language, SNIPPETS } from '../utils/snippets';
+import { Language, SNIPPETS } from '../utils';
 import { LanguageSelector } from './languageSelector';
 import { Output } from './output';
 
