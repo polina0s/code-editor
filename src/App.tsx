@@ -1,10 +1,17 @@
-import './App.css';
+import { Box } from '@mui/material';
+
+import { CodeEditor } from './components';
 
 function App() {
   return (
-    <>
-      <div className="wrap">aaaaaaaaa</div>
-    </>
+    <Box
+      sx={{
+        height: '100%',
+        p: 2,
+      }}
+    >
+      <CodeEditor />
+    </Box>
   );
 }
 
